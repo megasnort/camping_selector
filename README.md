@@ -1,10 +1,10 @@
 # Camping selector
 
-When travelling by bicycle I use a simple Garmin Etrex 20x for my navigation. Mostly because of it's battery usage (with 2 rechargable AA's you can ride about 400km) and simplicity (a line on a map is enough for me).
+When travelling by bicycle I use a simple Garmin Etrex 20x for my navigation. Mostly because of it's battery usage (with 2 rechargable AA's you can ride about 400km) and simplicity (a line on a map is enough).
 
-My routes I create with [Brouter](http://brouter.de/brouter-web/), and for campsite searching I use [Archies Campings](http://www.archiescampings.eu/) where you can download GPX files with camping-waypoints per country.
+My GPX-routes I create with [Brouter](http://brouter.de/brouter-web/), and for campsite searching I use [Archies Campings](http://www.archiescampings.eu/) where you can download GPX files with camping waypoints per country.
 
-In an ideal world, I put to GPX with my trip, together with a GPX with waypoints on my Garmin device. When I want to start looking for a camping, I zoom out on my Garmin and it will show the camping waypoints in the neighbourhood as flag.
+While traveling I have a GPX-with the route and a archiescampings-GPX loaded. When I want to start looking for a camping, I zoom out on my Garmin and it will show the camping waypoints in the neighbourhood as a flag.
 
 The problem is, in some countries, like France there are a lot of campings. 
 
