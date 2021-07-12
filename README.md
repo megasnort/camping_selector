@@ -44,7 +44,7 @@ However, there are more possibilities
 python camping_selector.py campings_france.gpx,campings_germany.gpx, your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx 20 selection_of_campings.gpx 300
 ```
 
-- **campings_france.gpx,campings_germany.gpx**: Files separated with a comma (without space), with camping waypoints
-- **your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx**: The routes you will be following during your travels, separated with a comma without spaces
-- **20**: The number of kilometers around your route where you want to look for campings
+- **campings_france.gpx,campings_germany.gpx**: Multiple files separated with a comma (without space), with camping waypoints. This allows for a cross country route!
+- **your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx**: The routes you will be following during your travels, separated with a comma without spaces. Always a good idea to split your GPX files per 10.000 lines.
+- **20**: The number of kilometers around your route where you want to look for campings.
 - **selection_of_campings.gpx**: A file with the waypoints 20km around your route. Note that your route is nót included in this file!
