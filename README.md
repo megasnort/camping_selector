@@ -10,11 +10,11 @@ The problem is, in some countries, like France there are a lot of campings.
 
 | ![France drawn with campings](france.png)
 |:--:| 
-| *All the campings of France. Nice.* |
+| *All the campings of France and one route.* |
 
-Putting a file with all the 9000 campsites of France on a Garmin slows the device down, and more problematic my simple Garmin doesn't load more then 10.000 lines per GPX file. Most of the waypoints are of no use, because the route of my trip is more or less determined in advance.
+Putting a file with all the 9000 campsites of France on a Garmin slows the device down, and more problematic my simple Garmin doesn't load more then 10.000 lines per GPX file. Also, most of the waypoints are of no use.
 
-The solution? This script!
+The solution? This script which will allow to select only the waypoints near the route!
 
 ## Dependencies
 
@@ -28,11 +28,23 @@ In it's most simplest form, execute the script like this:
 python camping_selector.py camping_waypoints.gpx your_route.gpx 20 selection_of_campings.gpx
 ```
 
-- **camping_waypoints.gpx**: A file, with waypoints, probably with campsites
+- **camping_waypoints.gpx**: A file, with camping waypoints
 - **your_route.gpx**: The route you will be following during your travels
-- **20**: The number of kilometers around your route you want to look for 
+- **20**: The number of kilometers around your route where you want to look for campings.
 - **selection_of_campings.gpx**: A file with the waypoints 20km around your route. Note that your route is nót included in this file!
 
 | ![Campings near the route](route.png)
 |:--:| 
-| *All the campings near the route. Nice.* |
+| *Only the campings near the route.* |
+
+
+However, there are more possibilities
+
+```
+python camping_selector.py campings_france.gpx,campings_germany.gpx, your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx 20 selection_of_campings.gpx 300
+```
+
+- **campings_france.gpx,campings_germany.gpx**: Files separated with a comma (without space), with camping waypoints
+- **your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx**: The routes you will be following during your travels, separated with a comma without spaces
+- **20**: The number of kilometers around your route where you want to look for campings
+- **selection_of_campings.gpx**: A file with the waypoints 20km around your route. Note that your route is nót included in this file!

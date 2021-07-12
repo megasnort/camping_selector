@@ -7,7 +7,7 @@ from geopy import Point
 
 def main():
     try:
-        waypoints_file = sys.argv[1]
+        waypoints_files = sys.argv[1]
     except (IndexError, IOError):
         print('Give a valid input waypoint file')
         exit(1)
@@ -30,16 +30,13 @@ def main():
         print('Give a valid output file')
         exit(1)
 
-    # parse routepoints per factor. By average, routepoints are about 40m apart.
+    # parse routepoints per factor. By average, routepoints are about 50m apart.
     # A factor of 10 will check per 400m for a campsite. The lower the factor, the slower the script.
     try:
         factor = int(sys.argv[5])
     except (IndexError, IOError):
         factor = 200
         
-    
-    factor
-
     # fetch campings
     tree = ET.parse(waypoints_file)
     root = tree.getroot()
