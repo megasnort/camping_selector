@@ -30,7 +30,7 @@ python camping_selector.py camping_waypoints.gpx your_route.gpx 20 selection_of_
 
 - **camping_waypoints.gpx**: A file, with camping waypoints
 - **your_route.gpx**: The route you will be following during your travels
-- **20**: The number of kilometers around your route where you want to look for campings.
+- **20**: The number of kilometers around your route where you want to look for campings. This is an generous approximation.
 - **selection_of_campings.gpx**: A file with the waypoints 20km around your route. Note that your route is nót included in this file!
 
 | ![Campings near the route](route.png)
