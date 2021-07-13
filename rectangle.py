@@ -2,6 +2,10 @@ import sys
 import xml.etree.ElementTree as ET
 from html import escape
 
+# very simple first version of the program that
+# selects the waypoints between two
+# coordinates.
+
 def main():
     try:
         input_file = sys.argv[1]
@@ -28,7 +32,7 @@ def main():
         exit(1)
 
 
-    # put smalles values in front, to make comparing later easier
+    # put smaller values in front, to make comparing later easier
     if coor1[0] > coor2[0]:
         coor1[0], coor2[0] = coor2[0], coor1[0]
     

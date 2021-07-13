@@ -3,10 +3,10 @@ import math
 import xml.etree.ElementTree as ET
 from html import escape
 
-
 from geopy import Point, distance
 
 def main():
+    # get input parameters.
     try:
         waypoints_files = sys.argv[1].split(',')
     except (IndexError, IOError):
@@ -23,7 +23,6 @@ def main():
         km_limit = abs(float(sys.argv[3]))
         skip = math.ceil(km_limit) * 15
         km_limit *= 1.1
-
     except (IndexError, IOError):
         print('Give a valid distance in km')
         exit(1)
@@ -71,7 +70,8 @@ def main():
                 smallest_lon = lon
             if lon > greatest_lon:
                 greatest_lon = lon
-
+    
+    # we store in which rectange (+ a margin) all route points are located
     SW = Point(smallest_lat, smallest_lon)
     NE = Point(greatest_lat, greatest_lon)
 
@@ -94,6 +94,7 @@ def main():
             lon = float(child.get('lon'))
             name = child.find('{http://www.topografix.com/GPX/1/1}name').text
 
+            # use a camping only if it is in our rectangle
             if SW[0] <= lat <= NE[0] and SW[1] <= lon <= NE[1]:
                 waypoints.append({
                     'lat': lat,
@@ -101,10 +102,7 @@ def main():
                     'name': name
                 })
 
-
     print('Searching in set of', len(waypoints),'campings')
-
-    
 
     output = '<?xml version="1.0" encoding="ISO-8859-1"?>\n'
     output += '<gpx creator="waypoint_selector" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1">\n'
@@ -114,6 +112,7 @@ def main():
     for waypoint in waypoints:
         counter = 0
         for route_point in route_points:
+            # only look for waypoints every 'skip' route point.
             if counter % skip == 0:
                 km = distance.distance(
                             Point(
@@ -138,7 +137,7 @@ def main():
     with open(output_file, 'w') as f:
         f.write(output)
 
-    print(found,'campings found.')
+    print(found, 'campings found.')
 
 if __name__ == '__main__':
     main()
