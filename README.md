@@ -30,21 +30,21 @@ python camping_selector.py camping_waypoints.gpx your_route.gpx 20 selection_of_
 
 - **camping_waypoints.gpx**: A file, with camping waypoints
 - **your_route.gpx**: The route you will be following during your travels
-- **20**: The number of kilometers around your route where you want to look for campings. This is an generous approximation.
-- **selection_of_campings.gpx**: A file with the waypoints 20km around your route. Note that your route is nót included in this file!
+- **20**: The number of kilometers around your route where you want to look for campings.
+- **selection_of_campings.gpx**: The output file with the waypoints 20km around your route. Note that your route is nót included in this file!
 
 | ![Campings near the route](route.png)
 |:--:| 
 | *Only the campings near the route.* |
 
 
-However, there are more possibilities
+There are more possibilities because there are more problems: What to do when you cycle through multiple countries, of when your route is divided over multiple GPX files?
 
 ```
 python camping_selector.py campings_france.gpx,campings_germany.gpx, your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx 20 selection_of_campings.gpx 300
 ```
 
 - **campings_france.gpx,campings_germany.gpx**: Multiple files separated with a comma (without space), with camping waypoints. This allows for a cross country route!
-- **your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx**: The routes you will be following during your travels, separated with a comma without spaces. Always a good idea to split your GPX files per 10.000 lines.
+- **your_route_part1.gpx,your_route_part2.gpx,your_route_part3.gpx**: The routes you will be following during your travels, separated with a comma without spaces. (Always a good idea to split your GPX files per 10.000 lines).
 - **20**: The number of kilometers around your route where you want to look for campings.
-- **selection_of_campings.gpx**: A file with the waypoints 20km around your route. Note that your route is nót included in this file!
+- **selection_of_campings_in_multiple_countries.gpx**: The output file with the waypoints 20km around your route. Note that your route is nót included in this file!
