@@ -1,5 +1,7 @@
 # Camping selector
 
+> ***NOTE:*** I made this tool available online at https://lijsttrekkers.be/camping-selector
+
 When travelling by bicycle I use a simple Garmin Etrex 20x for my navigation. Mostly because of it's battery usage (with 2 rechargable AA's you can ride about 400km) and simplicity (a line on a map is enough).
 
 My GPX-routes I create with [Brouter](http://brouter.de/brouter-web/), and for campsite searching I use [Archies Campings](http://www.archiescampings.eu/) where you can download GPX files with camping waypoints per country.
